@@ -14,7 +14,7 @@ try:
 except:
   import socket
 
-###Fun鑾界帿es para integarir via mqtt com o iothub
+#Funcoes para integarir via mqtt com o iothub
 def create_mqtt_client(client_id, hostname, username, password, port=8883, keepalive=120, ssl=True):
     if not keepalive:
         keepalive = 120
@@ -47,8 +47,7 @@ def parse_connection(connection_string):
     return dictionary
 
 
-###Fun鑾界帿es para interface web
-
+#Funcoes para interface web
 def formValues(request):
   dictFields = {}
   try:
@@ -96,7 +95,7 @@ def open_json():
     rj.close()
     return survey_data
 
-###Fun鑾借尗o para quando o usuario n鑼玱 esta com os dados preenchidos.
+#Funcoes para quando o usuario nao esta com os dados preenchidos.
 def web_register_uix():
   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   s.bind(('', 80))
@@ -137,13 +136,19 @@ def web_register_uix():
 
 #BOMBA1
 bomba1 = Pin(16, Pin.OUT)
+
 #BOMBA2
 bomba2 = Pin(17, Pin.OUT)
 #bomba2.value(not bomba1.value())
+
 #LED
 fitaled1 = Pin(5, Pin.OUT)
 #fitaled1.value(not fitaled1.value())
+
+#BOIA1
 boia1 = Pin(4, Pin.IN, Pin.PULL_UP)
+
+#BOIA2
 boia2 = Pin(15, Pin.IN, Pin.PULL_UP)
 
 last_message_bomba = 0

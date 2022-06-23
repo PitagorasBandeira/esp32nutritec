@@ -58,14 +58,6 @@ def pub_sub():
             mqtt_client.disconnect()
     except Exception as e: print("Sub function error: ", e)
 
-
-OTA = senko.Senko(user="cassiomoura", repo="esp32", working_dir="ota", files=["main.py"])
-if OTA.update():
-print("Updated to the latest version! Rebooting...")
-time.sleep(20)
-machine.reset()
-
-
 #while True:
 #    sub()
 #    utime.sleep(5)
@@ -73,6 +65,7 @@ _thread.start_new_thread(pub_sub, ())
 #_thread.start_new_thread(res, ())
 #_thread.start_new_thread(sub, ())
 #web_register_uix()
+
 
 
 

@@ -28,7 +28,7 @@ class MQTTClient(simple.MQTTClient):
                 self.delay(i)
             print("Cotagem Reconnect", i)
             if i > 3:
-                print("3 erros de conexão. Reset!")
+                print("3 erros de conex閼肩幈. Reset!")
                 machine.reset()
             
     def publish(self, topic, msg, retain=False, qos=0):
