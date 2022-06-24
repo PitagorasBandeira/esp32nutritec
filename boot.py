@@ -28,7 +28,7 @@ time.sleep(5)
 
 #Caso de tudo certo vai conectar e notificar
 if station.isconnected() == True:
-    print('Conectado com Sucesso')
+    print('Conectado com Sucesso ------------------------------')
     print(station.ifconfig())
     
 #Se der errado ela vai gerar uma rede propria, nessa rede vai ser possivel atualizar qualquer dado
