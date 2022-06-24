@@ -25,7 +25,10 @@ def callback_handler(topic, message_receive):
     message_received = message_receive
     #print("Received message")
     #print(message_receive)
-
+ 
+def reset_mac():
+  print("Reiniciando a pedido")
+  machine.reset()
 
 #collect from topic
 def pub_sub():
@@ -44,6 +47,7 @@ def pub_sub():
                 datadataset_dec_rep_j = set = json.loads(dataset_dec_rep)
                 if datadataset_dec_rep_j['act'] == "bomba1": bomba1()
                 elif datadataset_dec_rep_j['act'] == "bomba2": bomba2()
+                elif datadataset_dec_rep_j['act'] == "reset": reset_mac()
                 elif datadataset_dec_rep_j['act'] == "led1": fitaled1.value(not fitaled1.value())
                 elif datadataset_dec_rep_j['act'] == "rele": reles()
                 elif datadataset_dec_rep_j['act'] == "keepa": print("keepa")
@@ -65,6 +69,7 @@ _thread.start_new_thread(pub_sub, ())
 #_thread.start_new_thread(res, ())
 #_thread.start_new_thread(sub, ())
 #web_register_uix()
+
 
 
 

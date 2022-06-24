@@ -40,6 +40,10 @@ else:
     ap.ifconfig(('192.168.15.5', '255.255.255.0', '192.168.0.1', '8.8.8.8'))
     print('http://192.168.15.5')
     web_register_uix() #Sitema que ativa a pagina web para atualizar os dados
+    time.sleep(350)
+    print('Reiniciando após 5 minutos')
+    machine.reset()
+    
 
 #---
 #OTA
@@ -58,4 +62,5 @@ try:
 except:
     print('Sem Att no momento')
     None
+
 
